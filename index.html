@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="static/kl.png">
+  <title>快连官网下载</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Arial", sans-serif;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 5%;
+      padding-top: 5px;
+      background-color: transparent;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+
+      color: white;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo {
+      width: 60px;
+      height: 50px;
+      margin-right: 6px;
+      cursor: pointer;
+    }
+
+    .logo-text {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      letter-spacing: 3px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #555;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #4caf50;
+    }
+
+    .main-img,
+    .header-img {
+      width: 100%;
+      display: block;
+      cursor: pointer;
+    }
+
+    .down-btn {
+      width: 100px;
+      cursor: pointer;
+    }
+
+    section {
+      margin: 0;
+      padding: 0;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #777;
+      padding: 15px 0;
+      font-size: 0.6rem;
+    }
+  </style>
+</head>
+
+<body>
+  <style type="text/css">
+    .agl-hover {
+      outline: 2px solid rgba(244, 67, 54, 0.99) !important;
+      background-color: rgba(244, 67, 54, 0.2) !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    .agl-highlight-current {
+      outline: 2px solid rgba(255, 87, 34, 0.99) !important;
+      background-color: rgba(255, 87, 34, 0.4) !important;
+    }
+
+    .agl-highlight-similar {
+      outline: 2px dashed rgba(255, 87, 34, 0.99) !important;
+      background-color: rgba(255, 87, 34, 0.4) !important;
+    }
+
+    .agl-highlight-group {
+      outline: 4px double rgba(255, 87, 34, 0.99) !important;
+      background-color: rgba(255, 87, 34, 0.4) !important;
+    }
+
+    .agl-cover-current {
+      position: absolute !important;
+      top: 0;
+      left: 0;
+      z-index: 9 !important;
+
+      outline: 2px solid rgba(33, 33, 33, 0.99) !important;
+      background-color: rgba(33, 33, 33, 0.6) !important;
+    }
+
+    .agl-cover-similar {
+      position: absolute !important;
+      top: 0;
+      left: 0;
+      z-index: 9 !important;
+
+      outline: 2px dashed rgba(33, 33, 33, 0.99) !important;
+      background-color: rgba(33, 33, 33, 0.6) !important;
+    }
+
+    .agl-cover-group {
+      position: absolute !important;
+      top: 0;
+      left: 0;
+      z-index: 9 !important;
+
+      outline: 4px double rgba(33, 33, 33, 0.99) !important;
+      background-color: rgba(33, 33, 33, 0.6) !important;
+    }
+
+    .agl-cover-focus {
+      outline: 3px solid rgba(255, 165, 0, 0.99) !important;
+      background-color: rgba(255, 165, 0, 0.4) !important;
+    }
+  </style>
+
+  <header style="background: transparent; padding: 5px 5% 0px">
+    <div class="logo-container">
+      <img src="static/picture/logo.png" onclick="downloadFile()" class="logo">
+      <img src="static/picture/kl.png" class="logo-icon">
+      <span class="logo-text">快连</span>
+    </div>
+    <div>
+      <img src="static/picture/btn.png" class="down-btn" onclick="downloadFile()" data-agl-cvt="6">
+    </div>
+  </header>
+  <section>
+    <img src="static/picture/main.jpg" class="main-img" onclick="downloadFile()" data-agl-cvt="6">
+  </section>
+  <footer>
+    Copyright © 
+    江苏省扬州经济开发区花峰路1201号跨境电商产业园三期3幢GF区4层长河经济城H5360号
+    联系电话：4006886510
+  </footer>
+  <script>
+    function downloadFile() {
+      window.location.href = "https://kl.tidoa.xin/Lets3.14.3.exe";
+    }
+    const header = document.querySelector("header");
+
+    // 监听页面滚动事件
+    window.addEventListener("scroll", () => {
+      // 获取页面滚动的垂直位置
+      const scrollHeight = window.pageYOffset;
+
+      // 如果页面滚动超过0，将header背景变为黑色
+      if (scrollHeight > 20) {
+        header.style.background =
+          "linear-gradient(to right, #3f50e6, #a558d8)";
+        header.style.padding = "10px 5%";
+      } else {
+        // 如果页面滚动回到顶部，将header背景变回透明
+        header.style.background = "transparent";
+        header.style.padding = "5px 5% 0 5%";
+      }
+    });
+  </script>
+</body>
+<div style="all: initial">
+  <div style="all: initial" id="__hcfy__"></div>
+</div>
+
+</html>
